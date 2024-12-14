@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            color: azure;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+        }
+        #toggle{
+            width: 400px;
+            height: 160px;
+            position: relative;
+            background: white;
+            border-radius: 80px;
+            cursor: pointer;
+            /* transition: background-color 0.5s; */
+
+           
+        }
+        #toggle .indicator{
+            position: absolute;
+            width: 150px;
+            height: 160px;
+            background: #a11212;
+            border-radius: 80px;
+            transform: scale(.9);
+        }
+      
+        #toggle.active .indicator{
+            left: 250px;
+        }
+        
+        body.active{
+            color: #000;
+            background-image: linear-gradient(to left,red,green);
+        }
+    </style>
+</head>
+<body> <h1>hello this is the toggle theme</h1>
+    <div id="toggle">
+       
+        <i class="indicator"></i>
+    </div>
+</body>
+<script>
+    const body=document.querySelector('body');
+    const toggle=document.getElementById('toggle');
+    toggle.onclick=function(){
+        toggle.classList.toggle('active');
+        body.classList.toggle('active');
+    }
+</script>
+</html>
+
+
